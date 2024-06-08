@@ -1,4 +1,16 @@
 import Link from "next/link";
+import { Metadata } from 'next'
+
+
+type MetadataProps = {
+  params: { id: string }
+}
+
+export function generateMetadata({ params: { id } }: MetadataProps): Metadata {
+  return {
+    title: `Profile ${id}`,
+  }
+}
 
 
 export default function Profile({ params }: { params: { id: string } }) {
