@@ -4,11 +4,20 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Profiles',
 }
+
+type Profile = { id: number };
+type Profiles = Profile[];
+
+const profiles: Profiles = Array.from({ length: 6 }).map((_, index) => ({ id: index + 1 }));
+
+const getProfiles = async (): Promise<Profiles> => {
+  return new Promise(r => setTimeout(() => r(profiles), 1000))
+}
  
 
-export default function Profiles() {
+export default async function Profiles() {
 
-  const profiles = Array.from({ length: 6 }).map((_, index) => ({ id: index + 1 }));
+  const profiles: Profiles = await getProfiles();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
