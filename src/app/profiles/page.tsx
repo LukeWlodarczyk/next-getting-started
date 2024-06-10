@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Profiles',
 }
 
-type Profile = { id: number };
+export type Profile = { id: number };
 type Profiles = Profile[];
 
 const profiles: Profiles = Array.from({ length: 6 }).map((_, index) => ({ id: index + 1 }));
