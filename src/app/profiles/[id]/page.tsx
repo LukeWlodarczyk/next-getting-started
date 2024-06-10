@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from 'next'
+import LikeButton from "@/app/components/like-button/LikeButton";
 
 
 type MetadataProps = {
@@ -21,7 +22,10 @@ export default function Profile({ params }: { params: { id: string } }) {
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Profile {params.id}
         </p>
-        <Link href='/profiles'>Go back to Profiles</Link>
+        <div className="flex items-center justify-between">
+          <LikeButton />
+          <Link href='/profiles'>Go back to Profiles</Link>
+        </div>
       </div>
     </main>
   );
