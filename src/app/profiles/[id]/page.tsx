@@ -25,7 +25,7 @@ export default async function ProfilePage({ params }: { params: { id: string } }
   const profile: Profile = await getProfile(params.id);
 
   // not found mock
-  if (Number(params.id) === 7) {
+  if (Number(params.id) === 6) {
     return notFound();
   }
 
